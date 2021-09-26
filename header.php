@@ -54,7 +54,7 @@ if (!isset($_SESSION['login'])) {
 
 <body onload="myFunction()" style="margin:0;" class="justify-content-center">
 <?php $message="";?> 
-<?php #require"c_php/like.php"?>
+<?php require"c_php/like.php"?>
 <?php require"c_php/follow.php"?>
 <?php require"c_php/createcomment.php"?>
 <?php require"c_php/createreply.php"?>
