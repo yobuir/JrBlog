@@ -1,35 +1,4 @@
-<?php
-session_start();
-if (isset($_SESSION['login'])) {
-	header('location:home.php');;
-}
- 
-	include('conn.php'); 
- 
-?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php require"name.php"?>. Reset your password</title>
-	<link rel="icon" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.8.1-web/css/all.css">
-	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.8.1-web/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
-	<script type="text/javascript" src="vendor/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="vendor/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="javs.js"></script>
-	<script type="text/javascript" src="c_js/createpost.js"></script>
-</head> 
 <body class="loginbody">
 	<div class="container p-4">
 		<div class="row justify-content-center"> 

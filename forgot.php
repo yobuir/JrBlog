@@ -57,11 +57,11 @@ if (isset($_SESSION['login'])) {
                 
                 $url="https://mulinditvet.ac.rw/admin_register.php?tkn=".$new_tk;
                 
-                    $subject="MULINDI TVET SCHOOL";
+                    $subject="IKISE hh😂😂😂😂";
                     $message="click the link bellow to reset password\r\n";
                     
                     $message.='<a href="'.$url.'" style="">Create new and reset password</a>';
-                    $headers="From: mulinditvet.ac.rw <esmulindi388@gmail.com>\r\n";
+                    $headers="From: ikise <yobiur@gmail.com>\r\n";
                     $headers.="Content-type:text/html\r\n";
                     $maik=mail($to,$subject,$message,$headers);
                     if($maik){
