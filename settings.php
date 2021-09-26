@@ -59,7 +59,7 @@ if (isset($_POST['delete'])) {
 		<div class="col-lg-12 mt-5">
 			<div class="d-flex flex-row">
 				<div class="">
-					<a href="user.php?unique_id_profile=<?php echo($user_identity)?>" class="nav-link">Profile</a>
+					<a href="user.php?unique_id_profile=<?php echo($username)?>" class="nav-link">Profile</a>
 				</div>
 				<div >
 					<a href="#" class="link nav-link">Settings</a>

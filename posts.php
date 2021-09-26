@@ -1,4 +1,4 @@
-<div class="row mb-3">
+	<div class="row mb-3">
 	<div class="col-lg-12">
 		<div class="d-flex flex-row">
 			<div class="sticky-top profilepost">
@@ -29,6 +29,11 @@
 								</div>
 							</div>
 						</div>
+						<div>
+						<?php if($post['location'] != ''){?>
+							<small><i class="fa fa-map-marker"></i> <?php echo" ".$post['location']?></small>
+						<?php }?>
+						</div>
 						<div class="">
 							<small><?php followersuggestions($post['unique_id'])?></small> 
 						</div> 
@@ -37,21 +42,22 @@
 				<div class="col-lg-12 rounded p-2 text-break">
 
 						<?php
+
 				if (!empty($post['post'])) {
 				?>
 				<p class=""> 
 					<?php 
 					$content=$post['post']; 
-
+					$post_id=$post['post_unique_id'];
+					hashtagse($content,$post_id,$con);
 					if(preg_match_all('/#(\w+)/', $content, $matches)){
-
 					$hashtags=$matches[1];
-
 					$content=preg_replace('/#(\w+)/', '<a class="hashtags" href="hashtags.php?hashtags=$1">#$1</a>', $content); 
 
 					echo$content;
 
 					}elseif (preg_match_all('/@(\w+)/', $content, $matches)) {
+
 
 					$hashtags=$matches[1];
 
@@ -59,10 +65,6 @@
 
 					$inner=preg_replace('/@(\w+)/', '@$1', $content); 
 					echo$content;	
-
-					}elseif(preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$content, $matches)){
-
-						
 
 					}
 
@@ -90,11 +92,15 @@
 							<p class="p-3"> 
 								<?php 
 						$content=$post['image_caption']; 
+						$post_id=$post['post_unique_id'];
+						hashtagse($content,$post_id,$con);
 						if(preg_match_all('/#(\w+)/', $content, $matches)){
 						$hashtags=$matches[1];
 						$content=preg_replace('/#(\w+)/', '<a class="hashtags" href="hashtags.php?hashtags=$1">#$1</a>', $content); 
 						echo$content;
 						}elseif (preg_match_all('/@(\w+)/', $content, $matches)) {
+
+						
 						$hashtags=$matches[1];
 						$content=preg_replace('/@(\w+)/', '<a class="hashtags"    href="user.php?unique_id_profile=$1">@$1</a>', $content); 
 						echo$content;	 
@@ -117,6 +123,8 @@
 							<p class="p-3"> 
 								<?php 
 						$content=$post['image_caption']; 
+						$post_id=$post['post_unique_id'];
+						hashtagse($content,$post_id,$con);
 						if(preg_match_all('/#(\w+)/', $content, $matches)){
 						$hashtags=$matches[1];
 						$content=preg_replace('/#(\w+)/', '<a class="hashtags" href="hashtags.php?hashtags=$1">#$1</a>', $content); 
@@ -187,7 +195,7 @@
 
 		<div class="row commentarea">
 			<div class="col-lg-12">  
-				<div class="d-flex flex-row ml-5"> 
+				<div class="ml-5"> 
 					<div>
 						<?php require"c_php/noteslist.php"?>
 					</div>

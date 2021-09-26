@@ -25,6 +25,8 @@ $selectc=mysqli_query($con,"SELECT * FROM comments,posts,users where posts.post_
 							<p class=""> 
 								<?php 
 								$content=$fetchcommented['comment']; 
+								$post_id=$comment_id;
+								hashtagse($content,$post_id,$con);
 								if(preg_match_all('/#(\w+)/', $content, $matches)){
 								$hashtags=$matches[1];
 								$content=preg_replace('/#(\w+)/', '<a class="hashtags" href="hashtags.php?hashtags=$1">#$1</a>', $content); 
@@ -62,7 +64,7 @@ $selectc=mysqli_query($con,"SELECT * FROM comments,posts,users where posts.post_
 						</div>
 					</div>
 					<hr>
-					<div class="d-flex flex-row  ml-4">
+					<div class="d-flex flex-row  ml-4 mb-4">
 						<div class="flex-grow-1">
 						<?php require"replyarea.php"?> 
 						</div>

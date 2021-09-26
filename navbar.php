@@ -42,11 +42,9 @@
     <div class="float-right mr-5 searcharea">
       <div class="d-flex flex-row "> 
         <div class=""> 
-<div class="dropdown">
-  <a href="#"  style="
-
-background-color: rgba(56, 139, 253, 0.1);
-    border: 1px solid transparent;
+<div class="dropdown" style="
+    background-color: rgba(56, 139, 253, 0.1);
+    border: 1px solid rgba(56, 139, 253, 0.1);
     border-radius: 2em;
     color: #58a6ff;
     display: inline-block;
@@ -54,9 +52,14 @@ background-color: rgba(56, 139, 253, 0.1);
     font-weight: 500;
     line-height: 18px;
     line-height: 22px;
-    padding: 0 10px;
+    padding: 3px 20px;
+    position: absolute;
+    right: 75px;
 
-  " class="btn btn-sm dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+
+
+" >
+  <a href="#" class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
    <?php echo $username;?>
   </a>
   <ul class="dropdown-menu p-2 mt-3 rounded-0 dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">

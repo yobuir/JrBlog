@@ -45,8 +45,8 @@
 
 .userprofileimage{ 
    border-radius: 50%;
-    height: 100px;
-    width: 100px;  
+    height: 150px;
+    width: 150px;  
     background: #58a6ff; 
     text-align: center; 
      
@@ -54,7 +54,9 @@
 
 
 </style>
-<div class="container mb-5"  id="mySite">
+<div class="container-fluid" id="mySite"> 
+
+<div class="container mb-5"  >
 	<div class="row  justify-content-center"> 
 		<?php  
 			$selectallusers=mysqli_query($con,"SELECT * FROM  users where users.username='$user_to_follow'");
@@ -70,7 +72,7 @@
 				<div class="col-lg-12 text-white">
 					<div class="row justify-content-center text-white">
 						<div class="col-lg-3 mb-2">  
-							<img src="<?php echo($cover)?>" class="img-thumbnail" width="150px" height="150px">
+							<img src="<?php echo($cover)?>" class="userprofileimage img-thumbnail" >
 						</div>
 						<div class="col-lg-8 mb-2">
 								<div class="row"> 
@@ -150,21 +152,24 @@
 </div>
 
 <div class="container-fluid">
-	<div class="row">
+	<div class="row usernav sticky-top">
 		<div class="col-lg-12">
 			<hr>
 			<div class="row  justify-content-center font-weight-bold">
 				<div class="col-lg-3">
-					<a href="#followers" class="nav-linker" id="follower"> <?php include"c_php/followercount.php"?> Follower</a>						
+					<a href="#followers" class="nav-linker" id="follower"> 
+					<?php Followers($userimage,$con)  ?> Follower</a>						
 				</div>
 				<div class="col-lg-3">
-					<a  href="#following" class="nav-linker" id="followinger"> <span><?php include"c_php/followingcount.php"?></span> Following</a>
+					<a  href="#following" class="nav-linker" id="followinger"> <span>
+						<?php Followings($userimage,$con)  ?></span> Following</a>
 				</div>
 				<div class="col-lg-3">
-					<a  href="#Post" class="nav-linker" >Posts</a>
+					<a  href="#Post" class="nav-linker" > <span>
+						<?php userpostcount($userimage,$con)?></span> Posts</a>
 				</div>
 				<div class="col-lg-3"> 
-					<a  href="#Mentions" class="nav-linker">Mentions</a>
+					<a  href="#Mentions" class="nav-linker" hidden>Mentions</a>
 				</div> 
 			</div> 
 		</div>
@@ -200,9 +205,11 @@
 		<hr>
 		<?php require"footer.php";?> 
 	</div>
+	</div>
 </div>  
 <?php include"follower.php"?>
 <?php include"following.php"?> 
+
 <script type="text/javascript">
 $(document).ready(function () {
     $("#bio").hide(); 

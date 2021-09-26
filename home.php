@@ -33,10 +33,10 @@
 										<div class="d-flex flex-row justify-content-center"> 
 								
 										<a href="#Followers" class="flex-fill" id="followerBtn"> 
-										<?php include"c_php/followercount.php"?> Follower
+										<?php Followers($user_identity,$con)  ?> Follower
 										</a>
 										<a  href="#following" class="flex-fill" id="followingBtn"> 
-											<span><?php include"c_php/followingcount.php"?></span> Following
+											<span><?php Followings($user_identity,$con) ?></span> Following
 										</a>
 										<a href="#Post" class="flex-fill">
 											<?php echo$fetchalluserpost['total'];?> Posts</a>
@@ -79,7 +79,7 @@
 					<div class="col-lg-12 mt-4">
 						<div class="row justify-content-center">
 							<div class="col-lg-11 p-3">
-								Users to follow
+								Users Joined
 								<hr>
 							</div>
 							<div class="col-lg-11">

@@ -1,10 +1,6 @@
 <div style="overflow: auto;">
-<?php  
-function follower($user_identity)
-{
-	include('conn.php');
-	
-$selectallusers=mysqli_query($con,"SELECT * FROM users,follow where  follow.following='$user_identity' and follow.follow=1 and follow.follower=users.unique_id ");
+<?php 
+$selectallusers=mysqli_query($con,"SELECT * FROM users,follow where  follow.following='$userimage' and follow.follow=1 and follow.follower=users.unique_id ");
 		if ($selectallusers) {
 			if (mysqli_num_rows($selectallusers)>0) {
 				while ($fetchalluser=mysqli_fetch_array($selectallusers)) {
@@ -12,7 +8,7 @@ $selectallusers=mysqli_query($con,"SELECT * FROM users,follow where  follow.foll
 					?>
 					<div class="d-flex flex-row">
 						<div class=" text-white p-2  text-center ">
-							<?php profileuser($fetchalluser['unique_id'],$fetchalluser['username'])?>
+							<?php profileuser($fetchalluser['unique_id'],$fetchalluser['username'],$fetchalluser['username'])?>
 						</div>
 						<div class="flex-fill mt-3 ml-3">
 							<a href="user.php?unique_id_profile=<?php echo($fetchalluser['unique_id']) ?>"><?php echo$fetchalluser['username']?></a>
@@ -38,8 +34,4 @@ $selectallusers=mysqli_query($con,"SELECT * FROM users,follow where  follow.foll
 		}
 		?>
 
-</div> 
-<?php
-
-}
-?>
+</div>  

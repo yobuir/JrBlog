@@ -38,7 +38,7 @@
 			}else{
 
 				$sqlinsert=mysqli_query($con,"INSERT INTO likes values('$like_unique_id','$liked','$user_unique_id','$post_id','$date')");
-				mysqli_query($con, "INSERT INTO notifications VALUES('$like_unique_id','user_unique_id','$like_unique_id','likes','$date','0','liked ')");
+				mysqli_query($con, "INSERT INTO notifications VALUES('$like_unique_id','user_unique_id','$like_unique_id','likes','$date','0','liked')");
 					if ($sqlinsert) { 
 						echo"<div class='d-flex flex-row success'>
 										<div class='flex-fill'>Loved</div><div class='ml-2 disabled'><i class='fa fa-times-circle'></i></div></div>";

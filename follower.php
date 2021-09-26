@@ -9,22 +9,8 @@
           <button type="button" class="close" id="closed" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body" id="modal-body">
-           <?php follower($user_to_follow)?>
+           <?php require"c_php/follower.php";?>
         </div>   
       </form>
     </div>
   </div>
-
-<script type="text/javascript">
-   $(document).ready(function(){ 
-   	$("#followermodel").hide();
-    $("#follower").click(function(){
-        $("#followermodel").show();
-    });
-
-     $("#closed").click(function () {
-        	$("#followermodel").hide();
-    });
-   
-});
-</script>

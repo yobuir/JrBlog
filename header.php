@@ -5,7 +5,7 @@ if (!isset($_SESSION['login'])) {
 		header('location:login.php');
 		
 	}else{
-		$user_identity=$_SESSION['login'];
+		$user_identity=$_SESSION['login']; 
 		$username=$_SESSION['username'];
 	}	 
 	?>
@@ -38,9 +38,23 @@ if (!isset($_SESSION['login'])) {
 
 	<script type="text/javascript" src="javs.js"></script>
 	<script type="text/javascript" src="c_js/createpost.js"></script>
+	<script type="text/javascript">
+   $(document).ready(function(){ 
+   	$("#followermodel").hide();
+    $("#follower").click(function(){
+        $("#followermodel").show();
+    });
+
+     $("#closed").click(function () {
+        	$("#followermodel").hide();
+    });
+   
+});
+</script>
 	<script type="text/javascript" src="c_js/	creatcomments.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body onload="myFunction()" style="margin:0;" class="justify-content-center"> 
 	<div class="container-fluid">
 		<div class="row shadow topnav fixed-top">
@@ -48,6 +62,11 @@ if (!isset($_SESSION['login'])) {
 				<?php include"navbar.php"?>
 			</div>
 		</div>
+		<div id="loader">Wait frnd!!!</div>
+ 
+
+
+
 		<div class="row bodycontainer">
 			 
 <?php $message="";?> 
@@ -59,8 +78,6 @@ if (!isset($_SESSION['login'])) {
 <?php require"c_php/savefavbpost.php";?>
 <?php require"c_php/createstory.php";?>
 <?php require"c_php/verified.php";?>
-<?php require"c_php/follower.php";?>
-<?php require"c_php/following.php";?>
 <?php include('c_php/changeprofile.php');?>
 <?php include"c_php/extracthashtag.php"?>
 <?php include('postP.php');?>
@@ -72,7 +89,9 @@ if (!isset($_SESSION['login'])) {
 <?php require"c_php/mentioned.php"?>
 <?php require"c_php/selectmentions.php"?>
 
-
+<?php include"c_php/followercount.php";
+include"c_php/followingcount.php";
+include"c_php/postcount.php"; ?>
 
  <script type="text/javascript">
 function tempAlert()
@@ -102,5 +121,18 @@ tempAlerterror();
 
 </script>
 
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("mySite").style.display = "block";
+}
+</script>
 
 

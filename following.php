@@ -9,7 +9,7 @@
           <button type="button" class="close" id="closedd" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body" id="modal-body">
-          <?php following($user_to_follow)?>
+          <?php require"c_php/following.php";?>
         </div>   
       </form>
     </div>

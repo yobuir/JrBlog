@@ -33,7 +33,12 @@ a:hover{
 </style>
 <?php
 	include('header.php');
-	$hashtags=$_GET['hashtags'];
+	if (isset($_GET['hashtags'])){
+		$hashtags=$_GET['hashtags'];
+	}else{
+		$hashtags=" ";
+	}
+	
   
 ?>
 	<div class="container-fluid mb-5"  id="mySite">

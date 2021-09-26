@@ -10,6 +10,9 @@ body{
     width: 12px;
 }
 
+#mySite{
+  display: none;
+}
 
 body::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -458,8 +461,6 @@ margin: 0px;
   left: 40%;
   top: 50%;
   z-index: 1;    
-  width: 40px;
-  height: 40px; 
 }
 
 .style_error{

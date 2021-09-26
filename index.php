@@ -33,6 +33,9 @@ if (isset($_SESSION['login'])) {
 					</div>
 					<div class="col-lg-12">
 						<small class="text-center text-dark">Fast and secure </small>
+							<p>
+								Make it Sound Easier for Your Audience and Be Reachable
+							</p>
 					</div>
 					<div class="col-lg-12 mt-5">
 						<a href="login.php" class="btn" style="color: #58a6ff;border:1px solid #58a6ff;">Login</a>

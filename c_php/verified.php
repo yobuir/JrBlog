@@ -16,12 +16,12 @@
 		 $fetchallpost=mysqli_fetch_array($selectallallpost); 
 			$fetchalluserpost=mysqli_fetch_array($selectalluserspost);
 
-$totaloverhunderdpost=($fetchalluserpost['total']*100)/($fetchallpost['totalpost']);
+		$totaloverhunderdpost=($fetchalluserpost['total']*100)/($fetchallpost['totalpost']);
 
 			
 			$totaloverhunderd=(($fetchalluser['follower']+$fetchalluserpost['total'])*100)/($fetsystemusers['userss']+$fetchallpost['totalpost']);
 
-			if ($totaloverhunderd > 5) {
+			if ($totaloverhunderd > 20) {
 				echo('<small title="verified"><i class="fa fa-check-circle" id="verified" ></i></small>');
 				 
 			}else{ 
