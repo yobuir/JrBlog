@@ -11,7 +11,7 @@ $selectallusers=mysqli_query($con,"SELECT * FROM users,follow where  follow.foll
 							<?php profileuser($fetchalluser['unique_id'],$fetchalluser['username'],$fetchalluser['username'])?>
 						</div>
 						<div class="flex-fill mt-3 ml-3">
-							<a href="user.php?unique_id_profile=<?php echo($fetchalluser['unique_id']) ?>"><?php echo$fetchalluser['username']?></a>
+							<a href="user.php?unique_id_profile=<?php echo($fetchalluser['username']) ?>"><?php echo$fetchalluser['username']?></a>
 						</div>
 						<div class="mt-3">
 						 <?php include"c_php/followbtn.php"?>

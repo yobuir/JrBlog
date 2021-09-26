@@ -10,7 +10,7 @@ $selectfolllowingusers=mysqli_query($con,"SELECT * FROM users,follow where  foll
 							<?php profileuser($fetchfollowingss['unique_id'],$fetchfollowingss['username'],$fetchfollowingss['username'])?>
 						</div>
 						<div class="flex-fill mt-3 ml-3"> 
-							<a href="user.php?unique_id_profile=<?php echo($fetchfollowingss['unique_id']) ?>"><?php echo$fetchfollowingss['username']?></a>
+							<a href="user.php?unique_id_profile=<?php echo($fetchfollowingss['username']) ?>"><?php echo$fetchfollowingss['username']?></a>
 						</div>
 						<div class="mt-3">
 						 <?php include"c_php/followbtn.php"?>
