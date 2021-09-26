@@ -8,7 +8,7 @@ $selectc=mysqli_query($con,"SELECT count(like_unique_id) AS totalcount FROM like
 				if ($fetchlikes['totalcount']==0) {
 				 
 				}else{
-					echo($fetchlikes['totalcount']);
+					echo($fetchlikes['totalcount']); 
 				}
 			}
 		}else{ 

@@ -1,6 +1,5 @@
 <?php session_start(); 
-include('conn.php');
-
+include('conn.php'); 
 if (!isset($_SESSION['login'])) {
 		header('location:login.php');
 		
@@ -8,9 +7,7 @@ if (!isset($_SESSION['login'])) {
 		$user_identity=$_SESSION['login']; 
 		$username=$_SESSION['username'];
 	}	 
-	?>
-	 
-
+	?> 
 <!DOCTYPE html>
 <html>
 <head> 
@@ -57,7 +54,7 @@ if (!isset($_SESSION['login'])) {
 
 <body onload="myFunction()" style="margin:0;" class="justify-content-center">
 <?php $message="";?> 
-<?php require"c_php/like.php"?>
+<?php #require"c_php/like.php"?>
 <?php require"c_php/follow.php"?>
 <?php require"c_php/createcomment.php"?>
 <?php require"c_php/createreply.php"?>
@@ -85,11 +82,7 @@ include"c_php/postcount.php"; ?>
 				<?php include"navbar.php"?>
 			</div>
 		</div>
-		<div id="loader">Wait frnd!!!</div>
- 
-
-
-
+		<div id="loader">Wait !!!</div> 
 		<div class="row bodycontainer">
  <script type="text/javascript">
 function tempAlert()

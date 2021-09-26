@@ -17,8 +17,7 @@ $selectclikes=mysqli_query($con,"SELECT * FROM likes,posts,users where posts.pos
 
 
 				<span class="liked labelicon" style="color:#58a6ff"> Like</span> 
-				';
-
+				'; 
 				$title="Love";
 			}
 		}else{
@@ -27,9 +26,9 @@ $selectclikes=mysqli_query($con,"SELECT * FROM likes,posts,users where posts.pos
 ?>
 
 <form method="POST" title="<?php echo$title?>" class="d-flex flex-row  justify-content-center">
-	<input type="text" name="post_id" value="<?php
+	<input type="text" id="post_id" name="post_id" value="<?php
 					 echo($post['post_unique_id']);
 					?>" hidden>
-	<span class="mr-2  " style="color:#58a6ff;font-size: 15px;"><?php require"c_php/likedcount.php"?></span>
+	<span class="mr-2" style="color:#58a6ff;font-size: 15px;"><?php require"c_php/likedcount.php"?></span>
 	<button type="submit" name="like" class="btn countingbtn btn-sm btn-sm "><?php echo$label?></button> 
-</form>
+</form> 
