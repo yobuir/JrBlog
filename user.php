@@ -21,6 +21,9 @@
 			}
 		}?>
 <style type="text/css">
+body{
+	margin: 0;
+}
 	#bioBtn{
 		cursor: pointer;
 	}
@@ -51,12 +54,22 @@
     text-align: center; 
      
 }
-
+.linkmentions{
+	background-color: rgba(56, 139, 253, 0.1);
+    border: 1px solid transparent; 
+    color: #58a6ff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    line-height: 22px;
+    padding:6px;	
+}
 
 </style>
 <div class="container-fluid" id="mySite"> 
 
-<div class="container mb-5"  >
+<div class="container"  >
 	<div class="row  justify-content-center"> 
 		<?php  
 			$selectallusers=mysqli_query($con,"SELECT * FROM  users where users.username='$user_to_follow'");
@@ -149,9 +162,7 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<div class="container-fluid">
+ 
 	<div class="row usernav sticky-top">
 		<div class="col-lg-12">
 			<hr>
@@ -169,9 +180,11 @@
 						<?php userpostcount($userimage,$con)?></span> Posts</a>
 				</div>
 				<div class="col-lg-3"> 
-					<a  href="#Mentions" class="nav-linker" hidden>Mentions</a>
+					<a  href="#Mentions" class="nav-linker" >
+					<span><?php selectcounting_mentions($con,$user_to_follow)?></span> Mentions</a>
 				</div> 
-			</div> 
+			</div>
+			<hr> 
 		</div>
 	</div>
 </div>
@@ -179,8 +192,9 @@
 
 
 
-			 
+<div class="container-fluid">			 
 	<div class="row justify-content-center mt-5">
+			<?php selecting_mentioned($con,$user_to_follow)?>
 		<div class="col-lg-6"> 
 			<div class="row"> 
 				<div class="col-lg-12">
@@ -206,7 +220,8 @@
 		<?php require"footer.php";?> 
 	</div>
 	</div>
-</div>  
+</div> 
+</div> 
 <?php include"follower.php"?>
 <?php include"following.php"?> 
 

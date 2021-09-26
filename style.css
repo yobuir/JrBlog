@@ -378,8 +378,7 @@ border-color: #f3f3f3 transparent transparent transparent;
 .error_post{
    width: fit-content; 
     background:background: #dc3545;
-    color: white;
-    border-left: 3px solid white; 
+    color: white; 
 }
 i{
   fill: #58a6ff;

@@ -58,7 +58,10 @@
 
 					}elseif (preg_match_all('/@(\w+)/', $content, $matches)) {
 
+					$content=$post['post']; 
+					$post_id=$post['post_unique_id'];
 
+					Action_mention($con,$content,$post_id,$username);
 					$hashtags=$matches[1];
 
 					$content=preg_replace('/@(\w+)/', '<a class="hashtags"    href="user.php?unique_id_profile=$1">@$1</a>', $content);

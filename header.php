@@ -55,7 +55,30 @@ if (!isset($_SESSION['login'])) {
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body onload="myFunction()" style="margin:0;" class="justify-content-center"> 
+<body onload="myFunction()" style="margin:0;" class="justify-content-center">
+<?php $message="";?> 
+<?php require"c_php/like.php"?>
+<?php require"c_php/follow.php"?>
+<?php require"c_php/createcomment.php"?>
+<?php require"c_php/createreply.php"?>
+<?php require"c_chat/creategrp.php";?>
+<?php require"c_php/savefavbpost.php";?>
+<?php require"c_php/createstory.php";?>
+<?php require"c_php/verified.php";?>
+<?php include('c_php/changeprofile.php');?>
+<?php include"c_php/extracthashtag.php"?>
+<?php include"c_php/mentioned.php"?>
+<?php include('postP.php');?>
+<?php include('autolike.php');?>
+<?php require"c_php/replies.php"?>
+<?php require"c_php/Deletereplycomment.php"?>
+<?php require"c_php/suggestedfollowers.php"?> 
+<?php require"c_php/repliescout.php"?>  
+<?php require"c_php/selectmentions.php"?>
+
+<?php include"c_php/followercount.php";
+include"c_php/followingcount.php";
+include"c_php/postcount.php"; ?> 
 	<div class="container-fluid">
 		<div class="row shadow topnav fixed-top">
 			<div class="col-lg-12">
@@ -68,31 +91,6 @@ if (!isset($_SESSION['login'])) {
 
 
 		<div class="row bodycontainer">
-			 
-<?php $message="";?> 
-<?php require"c_php/like.php"?>
-<?php require"c_php/follow.php"?>
-<?php require"c_php/createcomment.php"?>
-<?php require"c_php/createreply.php"?>
-<?php require"c_chat/creategrp.php";?>
-<?php require"c_php/savefavbpost.php";?>
-<?php require"c_php/createstory.php";?>
-<?php require"c_php/verified.php";?>
-<?php include('c_php/changeprofile.php');?>
-<?php include"c_php/extracthashtag.php"?>
-<?php include('postP.php');?>
-<?php include('autolike.php');?>
-<?php require"c_php/replies.php"?>
-<?php require"c_php/Deletereplycomment.php"?>
-<?php require"c_php/suggestedfollowers.php"?> 
-<?php require"c_php/repliescout.php"?> 
-<?php require"c_php/mentioned.php"?>
-<?php require"c_php/selectmentions.php"?>
-
-<?php include"c_php/followercount.php";
-include"c_php/followingcount.php";
-include"c_php/postcount.php"; ?>
-
  <script type="text/javascript">
 function tempAlert()
 {

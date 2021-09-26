@@ -1,8 +1,10 @@
 <?php
 	include('header.php');
-	$post_unique_id=$_GET['post_unique_id'];
-	$user=$_GET['user_to_follow'];
-  
+	if (isset($_GET['post_unique_id'])) {
+		$post_unique_id=$_GET['post_unique_id'];
+	}else{
+			$post_unique_id="";
+	}
 ?>
 	<div class="container-fluid mb-5"  id="mySite">
 		<div class="row p-2">  
@@ -45,7 +47,7 @@
 										More posts related to this
 										<hr>
 <?php
-	$sqll=mysqli_query($con,"SELECT * FROM posts,users where posts.user_unique_id=users.unique_id  and posts.user_unique_id='$user' and posts.post_unique_id!='$post_unique_id' order by posts.id desc");
+	$sqll=mysqli_query($con,"SELECT * FROM posts,users where posts.user_unique_id=users.unique_id  and posts.user_unique_id='$user_to_follow' and posts.post_unique_id!='$post_unique_id' order by posts.id desc");
 		if ($sqll) {
 			 if (mysqli_num_rows($sqll) >0) {
 			 	while ($post=mysqli_fetch_array($sqll)) {
@@ -69,10 +71,7 @@
 							 
 									</div>
 								</div>
-							</div> 
-							<div class="col-lg-4 text-muted p-3">
-								Advertisement area
-							</div>
+							</div>  
 						</div> 
 					</div> 
 					
